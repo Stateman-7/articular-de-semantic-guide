@@ -1,7 +1,7 @@
 # Semantic HTML Guide
 
 This repository contains practical code examples supporting the article:  
-👉 [Implementing Semantic HTML Effectively](https://dev.to/Stateman/implementing-semantic-html-effectively)
+👉 [Implementing Semantic HTML Effectively](https://dev.to/stateman_7/implementing-semantic-html-effectively-2jg1)
 
 ## 📂 Repository Structure
 - **before-after-examples/** → Side-by-side comparisons of non-semantic vs semantic HTML
