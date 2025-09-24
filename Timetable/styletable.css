@@ -1,0 +1,97 @@
+/* Basic page */
+:root {
+  --border: #111;
+  --header-bg: #e9e9e9;
+  --break-bg: #ffe9c6;
+  --lunch-bg: #d8f0d8;
+  --end-bg: #dbeeff;
+  --cell-padding: 6px;
+  --small-font: 12px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 18px;
+  background: #fff;
+  color: #111;
+}
+
+.page-title {
+  text-align: center;
+  margin: 6px 0 14px;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+}
+
+/* Table container: center and allow horizontal scroll if needed */
+.table-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  padding: 8px;
+  background: #fff;
+}
+
+/* Timetable */
+table.timetable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* equal column widths based on header */
+  font-size: var(--small-font);
+}
+
+/* headers */
+table.timetable thead th {
+  border: 1px solid var(--border);
+  padding: var(--cell-padding);
+  text-align: center;
+  background: var(--header-bg);
+  font-weight: 600;
+}
+
+/* day column slightly narrower */
+.col-day { width: 7%; min-width: 70px; }
+.col-end { width: 9%; min-width: 90px; }
+
+/* cells */
+table.timetable td,
+table.timetable th[scope="row"] {
+  border: 1px solid var(--border);
+  padding: var(--cell-padding);
+  vertical-align: middle;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/* day row header styling */
+th.day {
+  background: #f2f2f2;
+  font-weight: 700;
+}
+
+/* specials */
+.break {
+  background: var(--break-bg);
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.lunch {
+  background: var(--lunch-bg);
+  font-weight: 700;
+}
+
+.end {
+  background: var(--end-bg);
+  font-weight: 700;
+}
+
+/* small responsive adjustments */
+@media (max-width: 900px) {
+  .page-title { font-size: 16px; }
+  table.timetable thead th { font-size: 11px; }
+  table.timetable { font-size: 11px; }
+}

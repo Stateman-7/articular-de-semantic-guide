@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration Form</title>
+</head>
+<body>
+  <main>
+    <h1>User Registration Form</h1>
+
+    <form action="/submit" method="post" novalidate>
+      
+      <!-- Personal Details -->
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" 
+               required aria-required="true" minlength="2" maxlength="30"
+               pattern="[A-Za-z]+" 
+               title="First name should only contain letters, 2–30 characters."><br><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" 
+               required aria-required="true" minlength="2" maxlength="30"
+               pattern="[A-Za-z]+" 
+               title="Last name should only contain letters, 2–30 characters."><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required aria-required="true"
+               max="2007-12-31"
+               title="You must be at least 18 years old."><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" max="100" required><br><br>      
+        
+        <span aria-required="true">Gender:</span><br>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label><br>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+
+        <label for="profile-photo">Profile Photo:</label>
+        <input type="file" name="profile-photo" id="profile-photo" required>
+      </fieldset>
+
+      <!-- Contact Details -->
+      <fieldset>
+        <legend>Contact & Address Information</legend>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required aria-required="true"
+               maxlength="50"
+               placeholder="example@email.com"><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" 
+               pattern="[0-9]{10}" aria-describedby="phone_help"
+               placeholder="0712345678" required>
+        <small id="phone_help">Enter a 10-digit number</small><br><br>
+
+        <label for="website">Personal Website:</label>
+        <input type="url" name="website" id="website" placeholder="https://example.com"><br><br>
+
+        <label for="address">Street Address:</label>
+        <input type="text" name="address" id="address"><br><br>
+
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city"><br><br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+          <option value="">Select Country</option>
+          <option value="kenya">Kenya</option>
+          <option value="uganda">Uganda</option>
+          <option value="tanzania">Tanzania</option>
+          <option value="rwanda">Rwanda</option>
+          <option value="egypt">Egypt</option>
+          <option value="mozambique">Mozambique</option>
+          <option value="somalia">Somalia</option>
+        </select><br><br>
+        
+        <label for="zip">ZIP/Postal Code:</label>
+        <input type="text" name="zip" id="zip"><br><br>
+
+        <label for="time">Preferred Contact Time:</label>
+        <input type="time" name="time" id="time">
+      </fieldset>
+
+      <!-- Preferences -->
+      <fieldset>
+        <legend>Preferences & Interests</legend>
+
+        <label for="color">Favorite Color:</label>
+        <input type="color" name="color" id="color"><br><br>
+
+        <label for="range">Experience Level (1-10):</label>
+        <input type="range" name="range" id="range" min="1" max="10"><br><br>
+
+        <label for="month">Birth Month:</label>
+        <input type="month" name="month" id="month"><br><br>
+
+        <label for="week">Available Week:</label>
+        <input type="week" name="week" id="week"><br><br>
+
+        <label for="search">Search Keywords:</label>
+        <input type="search" name="keywords" id="search" placeholder="Enter keywords..."> <br><br> 
+
+        <p>Interests (select all that apply):</p>
+        <input type="checkbox" name="interests" value="technology" id="tech">
+        <label for="tech">Technology</label><br>
+
+        <input type="checkbox" name="interests" value="sports" id="sports">
+        <label for="sports">Sports</label><br>
+
+        <input type="checkbox" name="interests" value="music" id="music">
+        <label for="music">Music</label><br>
+
+        <input type="checkbox" name="interests" value="travel" id="travel">
+        <label for="travel">Travel</label><br>
+
+        <input type="checkbox" name="interests" value="reading" id="reading">
+        <label for="reading">Reading</label><br>
+
+        <input type="checkbox" name="interests" value="cooking" id="cooking">
+        <label for="cooking">Cooking</label><br><br>
+
+        <label for="education">Education Level:</label>
+        <select id="education" name="education">
+          <option value="">Select Education Level</option>
+          <option value="primary">Primary</option>
+          <option value="secondary">Secondary</option>
+          <option value="highschool">High School</option>
+          <option value="diploma">Diploma</option>
+          <option value="bachelor">Bachelor’s Degree</option>
+          <option value="masters">Master’s Degree</option>
+          <option value="phd">PhD</option>
+        </select><br><br> 
+
+        <label for="password">Create Password:</label>
+        <input type="password" id="password" name="password" required aria-required="true"
+               minlength="8" maxlength="20"
+               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}"
+               title="Password must be 8–20 characters, include at least one uppercase letter, one lowercase letter, and one number."><br><br>
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required aria-required="true"
+               minlength="8" maxlength="20">
+      </fieldset>
+
+      <!-- Feedback info -->
+      <fieldset>
+        <legend>Feedback & Additional Information</legend><br>
+
+        <label for="about">Tell us about yourself:</label><br>
+        <textarea id="about" name="about" rows="3" cols="30" aria-multiline="true"
+                  maxlength="150"
+                  placeholder="Write a brief description about yourself... "></textarea> <br><br>       
+        
+        <label for="suggestions">Suggestions for improvement:</label><br>
+        <textarea id="suggestions" name="suggestions" rows="3" cols="30" aria-multiline="true"
+                  maxlength="150"
+                  placeholder="Any suggestions or feedback... "></textarea><br><br>
+                  
+        <label for="dt">Registration Date & Time:</label>
+        <input type="datetime-local" name="dt" id="dt"><br><br>
+
+        <label for="info">How did you hear about us?</label>
+        <select name="info" id="info">
+          <option value="">Select any</option>
+          <option value="adverts">Through Adverts</option>
+          <option value="newspapers">Newspapers</option>
+          <option value="google">Google</option>
+          <option value="socialmedia">Social Media</option>
+          <option value="contactperson">Contact Person</option>
+        </select><br><br>
+
+        <label for="file">Upload Resume (optional):</label>
+        <input type="file" name="file" id="file"><br><br>
+
+        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+        <label for="newsletter">Subscribe to our Newsletter</label><br><br>
+
+        <input type="checkbox" id="terms" name="terms" required aria-required="true">
+        <label for="terms">I agree to the Terms and Conditions</label><br><br>
+
+        <input type="checkbox" id="privacy" name="privacy" value="yes">
+        <label for="privacy">I agree to the Privacy Policy</label><br><br>
+      </fieldset><br>
+
+      <!-- Actions -->
+      <button type="submit">Register</button>
+      <button type="reset">Clear Form</button>
+    </form>
+  </main>
+  <footer><br>
+    ©Powered by Stateman
+</footer>
+</body>
+</html>
+
+
