@@ -40,4 +40,4 @@ The purpose of this form is to:
 ## 🚀 How to Use / View the Form
 1. Clone or download the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/Stateman-7/articular-de-semantic-guide.git
